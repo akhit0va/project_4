@@ -17,7 +17,7 @@ public class Cart {
         this.createdAt = LocalDateTime.now();
     }
 
-    // Methods to add and remove items oaihsfoisub
+
     public void addItem(CartItem cartItem) {
         this.cartItems.add(cartItem);
     }
