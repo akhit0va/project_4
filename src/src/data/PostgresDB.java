@@ -7,36 +7,35 @@ public class PostgresDB implements IDB {
     private String username;
     private String password;
     private String dbName;
+    private static PostgresDB instance;
+
 
     private Connection connection;
 
-    public PostgresDB(String host, String username, String password, String dbName) {
-        setHost(host);
-        setUsername(username);
-        setPassword(password);
-        setDbName(dbName);
+    private PostgresDB() {
+        try {
+            Class.forName("org.postgresql.Driver");
+            String url = "jdbc:postgresql://localhost:5432/Endterm_Project";
+            String user = "postgres";
+            String password = "0000";
+            connection = DriverManager.getConnection(url, user, password);
+        } catch (SQLException e) {
+            throw new RuntimeException("Database connection error: " + e.getMessage());
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
     public Connection getConnection() {
-        String connectionUrl = host + "/" + dbName;
-        try {
-            if (connection != null && !connection.isClosed()) {
-                return connection;
-            }
+        return connection;
+    }
 
-            // Here we load the driver’s class file into memory at the runtime
-            Class.forName("org.postgresql.Driver");
-
-            // Establish the connection
-            connection = DriverManager.getConnection(connectionUrl, username, password);
-
-            return connection;
-        } catch (Exception e) {
-            System.out.println("failed to connect to postgres: " + e.getMessage());
-
-            return null;
+    public static PostgresDB getInstance() {
+        if (instance == null) {
+            instance = new PostgresDB();
         }
+        return instance;
     }
 
     public String getHost() {

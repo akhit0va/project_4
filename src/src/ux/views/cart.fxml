@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.layout.HBox?>
+<VBox alignment="CENTER" spacing="10"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="ux.CartController">
+
+    <Label text="Shopping Cart" style="-fx-font-size: 20px;"/>
+
+    <ListView fx:id="cartListView" prefHeight="200"/>
+
+    <HBox spacing="10">
+        <Button text="Remove Selected" onAction="#removeSelected"/>
+        <Button text="Checkout" onAction="#checkout"/>
+    </HBox>
+
+    <Label fx:id="totalPriceLabel" text="Total: $0.00" style="-fx-font-size: 16px;"/>
+
+</VBox>

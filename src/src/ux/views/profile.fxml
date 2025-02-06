@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.layout.HBox?>
+<VBox alignment="CENTER" spacing="10"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="ux.ProfileController">
+
+    <Label text="User Profile" style="-fx-font-size: 24px;"/>
+
+    <Label text="Username:"/>
+    <TextField fx:id="usernameField"/>
+
+    <Label text="Email:"/>
+    <TextField fx:id="emailField"/>
+
+    <Label text="Change Password:"/>
+    <PasswordField fx:id="passwordField" promptText="Enter new password"/>
+
+    <HBox spacing="10">
+        <Button text="Save Changes" onAction="#saveProfile"/>
+        <Button text="Back to Menu" onAction="#backToMenu"/>
+    </HBox>
+
+</VBox>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="10"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="ux.OrderController">
+
+    <Label text="Your Orders" style="-fx-font-size: 20px;"/>
+    <ListView fx:id="orderListView" prefHeight="200"/>
+
+    <Button text="Back to Cart" onAction="#goBackToCart"/>
+
+</VBox>
