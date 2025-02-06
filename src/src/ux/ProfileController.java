@@ -20,7 +20,7 @@ public class ProfileController {
     private User currentUser;
 
     public ProfileController() {
-        this.userService = new UserService(new UserRepository(PostgresDB.getInstance()));
+        this.userService = new UserService(new  UserRepository(PostgresDB.getInstance()));
     }
 
     public void setUser(User user) {
