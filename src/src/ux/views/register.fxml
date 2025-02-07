@@ -9,4 +9,5 @@
     <TextField fx:id="emailField" promptText="Email"/>
     <PasswordField fx:id="passwordField" promptText="Password"/>
     <Button text="Register" onAction="#register"/>
+
 </VBox>

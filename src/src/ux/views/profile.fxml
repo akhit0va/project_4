@@ -5,9 +5,11 @@
 
 <?import javafx.scene.layout.HBox?>
 <VBox alignment="CENTER" spacing="10"
+
       xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="ux.ProfileController">
+
 
     <Label text="User Profile" style="-fx-font-size: 24px;"/>
 

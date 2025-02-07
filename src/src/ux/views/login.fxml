@@ -6,7 +6,7 @@
 <VBox alignment="CENTER" spacing="10"
       xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="ux.LoginController">  <!-- Ensure this path is correct -->
+      fx:controller="ux.LoginController">
 
     <Label text="Login" style="-fx-font-size: 20px;"/>
     <TextField fx:id="emailField" promptText="Email"/>

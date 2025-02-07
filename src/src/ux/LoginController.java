@@ -20,6 +20,7 @@ import static ux.Main.getSceneManager;
 
 public class LoginController {
     @FXML private TextField emailField;
+
     @FXML private PasswordField passwordField;
 
     private final IUserRepository userRepository = new UserRepository(PostgresDB.getInstance());
@@ -27,6 +28,7 @@ public class LoginController {
     @FXML
     private void login() {
         String email = emailField.getText();
+
         String password = passwordField.getText();
 
         User user = userRepository.getAllUsers()
@@ -47,6 +49,7 @@ public class LoginController {
                 Stage stage = (Stage) emailField.getScene().getWindow();
                 stage.setScene(new Scene(root));
                 stage.show();
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -69,6 +72,7 @@ public class LoginController {
     private void openRegister() throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/ux/views/register.fxml"));
         Stage stage = new Stage();
+
         stage.setScene(new Scene(loader.load(), 400, 500));
         stage.setTitle("Register");
         stage.show();

@@ -27,6 +27,7 @@ public class RegisterController {
         User newUser = new User(0, username, email, password);
         boolean success = userRepository.createUser(newUser);
 
+
         if (success) {
             showAlert("Success", "Registration successful!", Alert.AlertType.INFORMATION);
             getSceneManager().switchScene("/ux/views/menu.fxml");
@@ -39,6 +40,7 @@ public class RegisterController {
     private void showAlert(String title, String message, Alert.AlertType type) {
         Alert alert = new Alert(type);
         alert.setTitle(title);
+
         alert.setContentText(message);
         alert.show();
     }
